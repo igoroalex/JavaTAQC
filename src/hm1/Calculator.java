@@ -2,14 +2,14 @@ package hm1;
 
 import java.util.Scanner;
 
-public class calculator {
+public class Calculator {
 
     public static void main(String... args) {
 
         int a, b;
 
-        a = get_number();
-        b = get_number();
+        a = getNumber();
+        b = getNumber();
 
         System.out.println("a=" + a);
         System.out.println("b=" + b);
@@ -20,7 +20,7 @@ public class calculator {
         System.out.println(a + " / " + b + " = "  + division(a, b));
     }
 
-    private static int get_number(){
+    private static int getNumber(){
         Scanner sc = new Scanner(System.in);
         String a_line = sc.nextLine();
         int x = 0;
@@ -34,15 +34,19 @@ public class calculator {
         return x;
 
     }
+
     private static int plus(int a, int b){
         return a + b;
     }
+
     private static int minus(int a, int b){
         return a - b;
     }
+
     private static int multiplication(int a, int b){
         return a * b;
     }
+
     private static double division(int a, int b){
         double res;
         try{
