@@ -6,10 +6,8 @@ public class Calculator {
 
     public static void main(String... args) {
 
-        int a, b;
-
-        a = getNumber();
-        b = getNumber();
+        int a = getNumber();
+        int b = getNumber();
 
         System.out.println("a=" + a);
         System.out.println("b=" + b);
@@ -22,17 +20,15 @@ public class Calculator {
 
     private static int getNumber(){
         Scanner sc = new Scanner(System.in);
-        String a_line = sc.nextLine();
+        String xLine = sc.nextLine();
         int x = 0;
         try{
-            x = Integer.parseInt(a_line);
+            x = Integer.parseInt(xLine);
         }
         catch (NumberFormatException ex){
             ex.printStackTrace();
         }
-
         return x;
-
     }
 
     private static int plus(int a, int b){
@@ -59,7 +55,6 @@ public class Calculator {
             ex.printStackTrace();
             res = 0;
         }
-
         return res;
     }
 }

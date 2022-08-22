@@ -4,17 +4,15 @@ import java.util.Scanner;
 
 public class CountryCalls {
 
-    public static void main(String[] args){
+    public static void main(String... args){
 
-        int cost1, cost2, cost3;
-
-        cost1 = calcCost("c1");
-        cost2 = calcCost("c2");
-        cost3 = calcCost("c3");
+        System.out.println("Tariff for c1");
+        int cost1 = calcCost("c1");
+        int cost2 = calcCost("c2");
+        int cost3 = calcCost("c3");
 
         int allCost = cost1 + cost2 + cost3;
         System.out.println("All costs of call is " + allCost);
-
     }
 
     private static int calcCost(String country){
@@ -24,19 +22,18 @@ public class CountryCalls {
 
         int cost = tariff * talk;
 
-        System.out.println("for c1 cost is " + cost);
+        System.out.println("for " + country + " cost is " + cost);
         return cost;
 
     }
     private static int getTariff(String country){
-        System.out.println("Tariff for " + country);
 
         Scanner sc = new Scanner(System.in);
-        String a_line = sc.nextLine();
+        String xLine = sc.nextLine();
 
         int x = 0;
         try{
-            x = Integer.parseInt(a_line);
+            x = Integer.parseInt(xLine);
         }
         catch (NumberFormatException ex){
             ex.printStackTrace();
@@ -50,18 +47,9 @@ public class CountryCalls {
         System.out.println("Talk for " + country);
 
         Scanner sc = new Scanner(System.in);
-        String a_line = sc.nextLine();
+        String xLine = sc.nextLine();
 
-        int x = 0;
-        try{
-            x = Integer.parseInt(a_line);
-        }
-        catch (NumberFormatException ex){
-            ex.printStackTrace();
-        }
-
-        return x;
-
+        return Integer.parseInt(xLine);
     }
 
 }
