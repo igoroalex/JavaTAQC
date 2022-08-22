@@ -57,10 +57,10 @@ public class Person {
         System.out.println(person1.age());
 
         Person person2 = new Person("Scally", LocalDate.of(1971, 1, 20));
-        System.out.println(person2.age());
         System.out.println(person2);
         System.out.println(person2.output());
 
         Person person3 = new Person("Scinner", LocalDate.of(2023, 1, 20));
+        System.out.println(person3.output());
     }
 }
