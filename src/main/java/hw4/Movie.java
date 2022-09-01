@@ -35,7 +35,8 @@ public class Movie {
     public static List<Movie> getMoviesFromJSONFile(String path) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
-        return mapper.readValue(new File(path), new TypeReference<List<Movie>>() {
+//        return mapper.readValue(new File(path), new TypeReference<List<Movie>>() {
+        return mapper.readValue(new File(path), new TypeReference<>() {
         });
     }
     public static void writeMoviesToJSONFile(List<Movie> movies, String path) throws IOException {
@@ -45,9 +46,8 @@ public class Movie {
     }
 
     public static void main(String[] args) {
-        ObjectMapper mapper = new ObjectMapper();
 
-        Movie m1 = null;
+        Movie m1;
         try {
             m1 = getMovieFromJSON("{ \"title\" : \"MIB\", \"imdb\" : \"8.1\" }");
         } catch (JsonProcessingException ex) {
@@ -56,15 +56,15 @@ public class Movie {
         System.out.println(m1);
 
         try {
-            m1 = getMovieFromJSONFile("src/main/java/movie_2.json");
+            m1 = getMovieFromJSONFile("src/main/java/hw4/movie_2.json");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         System.out.println(m1);
 
-        List<Movie> movies = null;
+        List<Movie> movies;
         try {
-            movies = getMoviesFromJSONFile("src/main/java/movie_3.json");
+            movies = getMoviesFromJSONFile("src/main/java/hw4/movie_3.json");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -74,7 +74,7 @@ public class Movie {
         }
 
         try {
-            writeMoviesToJSONFile(movies, "src/main/java/movies.json");
+            writeMoviesToJSONFile(movies, "src/main/java/hw4/movies.json");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
