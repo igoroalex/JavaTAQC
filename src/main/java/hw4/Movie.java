@@ -35,7 +35,6 @@ public class Movie {
     public static List<Movie> getMoviesFromJSONFile(String path) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
-//        return mapper.readValue(new File(path), new TypeReference<List<Movie>>() {
         return mapper.readValue(new File(path), new TypeReference<>() {
         });
     }
@@ -78,21 +77,5 @@ public class Movie {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getImdb() {
-        return imdb;
-    }
-
-    public void setImdb(String imdb) {
-        this.imdb = imdb;
     }
 }
