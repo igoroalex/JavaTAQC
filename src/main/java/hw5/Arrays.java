@@ -30,7 +30,7 @@ public class Arrays {
         int temp = 0;
         for (int ele : a){
             if (ele > 0){
-                temp = temp + ele;
+                temp += ele;
             }
         }
         return temp;
