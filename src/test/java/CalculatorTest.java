@@ -1,28 +1,28 @@
+import hw1.Calculator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
-    Calculator calc = new Calculator();
 
     @Test
     public void testPlus(){
-        assertEquals(11, calc.plus(5, 6));
+        assertEquals(11, Calculator.plus(5, 6));
     }
 
     @Test
     public void testMinus(){
-        assertEquals(4, calc.minus(10, 6));
+        assertEquals(4, Calculator.minus(10, 6));
     }
 
     @Test
     public void testMultiplication(){
-        assertEquals(30, calc.multiplication(5, 6));
+        assertEquals(30, Calculator.multiplication(5, 6));
     }
 
     @Test
     public void testDivision(){
-        assertEquals(2, calc.division(10, 5));
+        assertEquals(2, Calculator.division(10, 5));
     }
 
 }

@@ -31,19 +31,19 @@ public class Calculator {
         return x;
     }
 
-    private static int plus(int a, int b){
+    public static int plus(int a, int b){
         return a + b;
     }
 
-    private static int minus(int a, int b){
+    public static int minus(int a, int b){
         return a - b;
     }
 
-    private static int multiplication(int a, int b){
+    public static int multiplication(int a, int b){
         return a * b;
     }
 
-    private static double division(int a, int b){
+    public static double division(int a, int b){
         double res;
         try{
             res = (double) a / b;
