@@ -1,74 +1,68 @@
 package hw5;
 
+import java.util.*;
+
 public class Employee {
+
+    private static int sequence;
+    private int id;
     private String name;
-    private int department_number;
+    private int departmentNumber;
+
     private int salary;
 
     public Employee(String name, int department_number, int salary) {
+        super();
         this.name = name;
-        this.department_number = department_number;
+        this.departmentNumber = department_number;
         this.salary = salary;
+        sequence++;
+        this.id = sequence;
+    }
+
+    public int getSalary() {
+        return salary;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + name + '\'' +
-                ", department_number=" + department_number +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", departmentNumber=" + departmentNumber +
                 ", salary=" + salary +
                 '}';
     }
 
-    public static void main(String[] args) {
+    public static List<Employee> employeesOfDepartment(ArrayList<Employee> allEmployees, int searchDepartment) {
+        List<Employee> res = new ArrayList<>();
 
-        Employee[] allEmployees = {new Employee("Mulder", 2, 1000),
-                new Employee("Scully", 2, 2000),
-                new Employee("Sciner", 1, 1500),
-                new Employee("Crichek", 100, 800),
-                new Employee("Smoker", 100, 100000),
-        };
-
-        System.out.println("Employees of department 2");
-        Employee[] employeesOf2 = employeesOfDepartment(allEmployees, 2);
-        for (Employee ele : employeesOf2){
-            if (ele == null){
-                continue;
-            }
-            System.out.println(ele);
-        }
-
-        System.out.println("Sorted Employees by salary");
-        Employee[] sortedEmployees = sortedEmployeesSalary(allEmployees);
-        for (Employee ele : sortedEmployees){
-            System.out.println(ele);
-        }
-
-    }
-
-    public static Employee[] employeesOfDepartment(Employee[] allEmployees, int curDepartment) {
-        Employee[] temp = new Employee[allEmployees.length];
-        int i = 0;
         for (Employee ele : allEmployees) {
-            if (ele.department_number == curDepartment) {
-                temp[i] = ele;
-                i++;
+            if (ele.departmentNumber == searchDepartment) {
+                res.add(ele);
             }
         }
-        return temp;
+        return res;
     }
-    public static Employee[] sortedEmployeesSalary(Employee[] allEmployees){
-        Employee[] sortedEmployees = allEmployees.clone();
-        Employee tmp;
-        for (int i = 0; i < sortedEmployees.length - 1; i++) {
-            for (int j = i + 1; j < sortedEmployees.length; j++) {
-                if (sortedEmployees[i].salary < sortedEmployees[j].salary) {
-                    tmp = sortedEmployees[i];
-                    sortedEmployees[i] = sortedEmployees[j];
-                    sortedEmployees[j] = tmp;
-                }
-            }
-        }
+
+    public static ArrayList<Employee> sortedEmployeesSalary(ArrayList<Employee> allEmployees) {
+        ArrayList<Employee> sortedEmployees = (ArrayList<Employee>) allEmployees.clone();
+        sortedEmployees.sort(new SalaryComparator());
         return sortedEmployees;
+    }
+
+    private static class SalaryComparator implements Comparator<Employee> {
+        @Override
+        public int compare(Employee o1, Employee o2) {
+            return o1.salary - o2.salary;
+        }
+    }
+
+    public static Map toMap(ArrayList<Employee> allEmployees) {
+        Map res = new HashMap();
+        for (Employee x : allEmployees) {
+            res.put(x.id, x.name);
+        }
+        return res;
     }
 }

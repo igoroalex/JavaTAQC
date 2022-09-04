@@ -5,7 +5,7 @@ public class Arrays {
     public static void main(String[] args) {
         int[] a = {-45, 78, 56, 13, -16, 21, 36, 25, 34, 36};
 
-        System.out.println(maxAge(a));
+        System.out.println(max(a));
         System.out.println(sumPositive(a));
         System.out.println(amountNegative(a));
         System.out.println(amountPositive(a));
@@ -16,42 +16,44 @@ public class Arrays {
     public static boolean isMorePositive(int[] a) {
         return amountPositive(a) > amountNegative(a);
     }
-    public static int maxAge(int[] a) {
-        int temp = a[0];
+
+    public static int max(int[] a) {
+        int res = a[0];
         for (int ele : a) {
-            if (ele > temp) {
-                temp = ele;
+            if (ele > res) {
+                res = ele;
             }
         }
-        return temp;
+        return res;
     }
 
-    public static int sumPositive(int[] a){
-        int temp = 0;
-        for (int ele : a){
-            if (ele > 0){
-                temp += ele;
+    public static int sumPositive(int[] a) {
+        int res = 0;
+        for (int ele : a) {
+            if (ele > 0) {
+                res += ele;
             }
         }
-        return temp;
+        return res;
     }
 
-    public static int amountNegative(int[] a){
-        int temp = 0;
-        for (int ele : a){
-            if (ele < 0){
-                temp ++;
+    public static int amountNegative(int[] a) {
+        int res = 0;
+        for (int ele : a) {
+            if (ele < 0) {
+                res++;
             }
         }
-        return temp;
+        return res;
     }
-    public static int amountPositive(int[] a){
-        int temp = 0;
-        for (int ele : a){
-            if (ele > 0){
-                temp ++;
+
+    public static int amountPositive(int[] a) {
+        int res = 0;
+        for (int ele : a) {
+            if (ele > 0) {
+                res++;
             }
         }
-        return temp;
+        return res;
     }
 }
