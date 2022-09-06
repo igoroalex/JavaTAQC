@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,6 +19,8 @@ class practicalTask1Test {
         for (int i = 0; i < 30; i+=2) {
             res.add(i);
         }
+        int[] arrInt = {1, 4, 6, 8, 9};
+//        Arrays.copyOf(arrInt);
         ptTest.setMyCollection(res);
 
     }

@@ -23,10 +23,8 @@ public class App {
         pt1.cheat();
         System.out.println("Cheat. My collection " + pt1.getMyCollection());
 
-        Object[] a = pt1.sort();
-        for (Object x : a) {
-            System.out.println(x);
-        }
+        ArrayList<Integer> a = pt1.sort();
+        System.out.println("Sorted. " + pt1.sort());
     }
 
     private static void task2() {

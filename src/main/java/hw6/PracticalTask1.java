@@ -1,7 +1,10 @@
 package hw6;
 
+import hw5.Employee;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class PracticalTask1 {
@@ -47,9 +50,9 @@ public class PracticalTask1 {
         myCollection.set(5, -4);
     }
 
-    public Object[] sort() {
-        Object[] res = myCollection.toArray();
-        Arrays.sort(res);
+    public ArrayList<Integer> sort() {
+        ArrayList<Integer> res = (ArrayList<Integer>) myCollection.clone();
+        Collections.sort(res);
         return res;
     }
 
