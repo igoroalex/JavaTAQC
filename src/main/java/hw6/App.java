@@ -8,7 +8,7 @@ import java.util.Map;
 public class App {
 
     public static void main(String[] args) {
-//        task1();
+        task1();
         task2();
     }
 
@@ -17,13 +17,12 @@ public class App {
         System.out.println("My collection " + pt1.getMyCollection());
         System.out.println("New collection " + pt1.getNewCollection());
 
-//        pt1.remove20();
-//        System.out.println("Remove 20 and more. My collection " + pt1.getMyCollection());
+        pt1.remove20();
+        System.out.println("Remove 20 and more. My collection " + pt1.getMyCollection());
 
         pt1.cheat();
         System.out.println("Cheat. My collection " + pt1.getMyCollection());
 
-        ArrayList<Integer> a = pt1.sort();
         System.out.println("Sorted. " + pt1.sort());
     }
 
@@ -36,18 +35,18 @@ public class App {
         allEmployees.add(new Employee("Crichek", 100, 800));
         allEmployees.add(new Employee("Smoker", 100, 100000));
 
-        Map employeeMap = Employee.toMap(allEmployees);
-        System.out.println("employeeMap " + employeeMap);
+        Map<Integer, String> employeeName = Employee.toMap(allEmployees);
+        System.out.println("employeeMap " + employeeName);
 
         int findKey = 10;
-        if (employeeMap.containsKey(findKey)) {
-            System.out.println(employeeMap.get(findKey));
+        if (employeeName.containsKey(findKey)) {
+            System.out.println(employeeName.get(findKey));
         } else {
             System.out.println("No employee under " + findKey);
         }
         String findName = "Smoker";
-        if (employeeMap.containsValue(findName)) {
-            for (Map.Entry<Integer, String> rec : employeeMap.entrySet()) {
+        if (employeeName.containsValue(findName)) {
+            for (Map.Entry<Integer, String> rec : employeeName.entrySet()) {
                 if (rec.getValue().equals(findName)) {
                     System.out.println(rec.getKey());
                 }

@@ -8,7 +8,6 @@ public class Employee {
     private int id;
     private String name;
     private int departmentNumber;
-
     private int salary;
 
     public Employee(String name, int department_number, int salary) {
@@ -30,11 +29,11 @@ public class Employee {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", departmentNumber=" + departmentNumber +
-                ", salary=" + salary +
+                ", salary=" + getSalary() +
                 '}';
     }
 
-    public static List<Employee> employeesOfDepartment(ArrayList<Employee> allEmployees, int searchDepartment) {
+    public static List<Employee> employeesOfDepartment(List<Employee> allEmployees, int searchDepartment) {
         List<Employee> res = new ArrayList<>();
 
         for (Employee ele : allEmployees) {
@@ -45,8 +44,9 @@ public class Employee {
         return res;
     }
 
-    public static ArrayList<Employee> sortedEmployeesSalary(ArrayList<Employee> allEmployees) {
-        ArrayList<Employee> sortedEmployees = (ArrayList<Employee>) allEmployees.clone();
+
+    public static List<Employee> sortedEmployeesSalary(List<Employee> allEmployees) {
+        List<Employee> sortedEmployees = new ArrayList<>(allEmployees);
         sortedEmployees.sort(new SalaryComparator());
         return sortedEmployees;
     }

@@ -1,11 +1,6 @@
 package hw6;
 
-import hw5.Employee;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Random;
+import java.util.*;
 
 public class PracticalTask1 {
     private ArrayList<Integer> myCollection;
@@ -33,7 +28,6 @@ public class PracticalTask1 {
         for (int x : myCollection) {
             if (x > 20) {
                 res.add(i);
-//                res.add(myCollection.indexOf(x));
             }
             i++;
         }
@@ -50,8 +44,8 @@ public class PracticalTask1 {
         myCollection.set(5, -4);
     }
 
-    public ArrayList<Integer> sort() {
-        ArrayList<Integer> res = (ArrayList<Integer>) myCollection.clone();
+    public List<Integer> sort() {
+        List<Integer> res = new ArrayList<>(myCollection);
         Collections.sort(res);
         return res;
     }

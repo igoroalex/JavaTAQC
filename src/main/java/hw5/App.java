@@ -9,7 +9,7 @@ import static hw5.Employee.*;
 public class App {
 
     public static void main(String[] args) {
-//        arrays();
+        arrays();
         employees();
     }
 
@@ -27,7 +27,7 @@ public class App {
 
     public static void employees() {
 
-        ArrayList<Employee> allEmployees = new ArrayList<>();
+        List<Employee> allEmployees = new ArrayList<>();
         allEmployees.add(new Employee("Mulder", 2, 1000));
         allEmployees.add(new Employee("Scully", 2, 2000));
         allEmployees.add(new Employee("Sciner", 1, 1500));
@@ -41,7 +41,7 @@ public class App {
         }
 
         System.out.println("Sorted Employees by salary");
-        ArrayList<Employee> sortedEmployees = sortedEmployeesSalary(allEmployees);
+        List<Employee> sortedEmployees = sortedEmployeesSalary(allEmployees);
         for (Employee ele : sortedEmployees) {
             System.out.println(ele);
         }
