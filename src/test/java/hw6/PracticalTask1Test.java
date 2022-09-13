@@ -17,26 +17,29 @@ class PracticalTask1Test {
             res.add(i);
         }
         ptTest.setMyCollection(res);
-
     }
     @Test
     public void testGetNewCollection(){
-        assertEquals(4, ptTest.getNewCollection().size());
+        int res = ptTest.getMyCollection().size();
+        assertEquals(4, res);
     }
 
     @Test
     public void testRemove20() {
-        assertEquals(4, ptTest.getNewCollection().size());
+        int res = ptTest.getMyCollection().size();
+        assertEquals(4, res);
     }
 
     @Test
     public void testCheat() {
         ptTest.cheat();
-        assertEquals(-1, ptTest.getMyCollection().get(2));
+        int res = ptTest.getMyCollection().get(2);
+        assertEquals(-1, res);
     }
     @Test
     public void testSort() {
         ptTest.sort();
-        assertEquals(0, ptTest.getMyCollection().get(0));
+        int res = ptTest.getMyCollection().get(0);
+        assertEquals(0, res);
     }
 }
