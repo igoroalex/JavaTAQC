@@ -34,9 +34,9 @@ public class App {
             myPlants.add(new Plant(100, "green", "water"));
             myPlants.add(new Plant(100, "pink", "bush"));
         } catch (ColorException | TypeException e) {
-            System.out.println(e);
+            System.err.println(e);
         } catch (IllegalArgumentException e) {
-            System.out.println(e + e.getMessage());
+            System.err.println(e + e.getMessage());
         }
 
         System.out.println("myPlants: " + myPlants);
