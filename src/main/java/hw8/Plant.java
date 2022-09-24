@@ -1,11 +1,25 @@
 package hw8;
 
+import java.util.Comparator;
+
 public class Plant {
     private int size;
 
     private Color color;
 
     private Type type;
+
+    public Plant(int size, String colorName, String typeName) {
+        this.size = size;
+        setColorByName(colorName);
+        setTypeByName(typeName);
+    }
+
+    public Plant(int size, Color color, Type type) {
+        this.size = size;
+        setColor(color);
+        setType(type);
+    }
 
     public int getSize() {
         return size;
@@ -25,18 +39,6 @@ public class Plant {
 
     public void setType(Type type) {
         this.type = type;
-    }
-
-    public Plant(int size, String colorName, String typeName) {
-        this.size = size;
-        setColorByName(colorName);
-        setTypeByName(typeName);
-    }
-
-    public Plant(int size, Color color, Type type) {
-        this.size = size;
-        setColor(color);
-        setType(type);
     }
 
     private void setTypeByName(String typeName) throws TypeException {
@@ -65,4 +67,18 @@ public class Plant {
                 ", type='" + type + '\'' +
                 '}';
     }
+
+    public static class SizeComparator implements Comparator<Plant> {
+        @Override
+        public int compare(Plant o1, Plant o2) {
+            return o1.size - o2.size;
+        }
+    }
+
+//    public static class TypeComparator implements Comparator<Plant> {
+//        @Override
+//        public int compare(Plant o1, Plant o2) {
+//            return new Type.TypeComparator();
+//        }
+//    }
 }
